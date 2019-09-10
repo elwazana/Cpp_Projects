@@ -31,3 +31,33 @@ float Point2D::fastDistanceTo(Point2D other) {
   return d;
 }
 
+
+// Constructors for Vec2D
+Vec2D::Vec2D() {
+  mX = 0.0;
+  mY = 0.0;
+}
+
+Vec2D::Vec2D(float inX, float inY) {
+  mX = inX;
+  mY = inY;
+}
+
+// Methods of a Vec2D
+float Vec2D::length() {
+  float calc = pow(mX, 2) + pow(mY, 2);
+  float v    = sqrt(calc);
+  return v;
+}
+
+Vec2D Vec2D::normalize() {
+  float outX = mX / length();
+  float outY = mY / length();
+  Vec2D vnorm = Vec2D(outX, outY);
+  return vnorm;
+}
+
+Vec2D Vec2D::multiply(float scalar) {
+  Vec2D vnorm = Vec2D(mX * scalar, mY * scalar);
+  return vnorm;
+}
