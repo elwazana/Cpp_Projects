@@ -53,11 +53,19 @@ float Vec2D::length() {
 Vec2D Vec2D::normalize() {
   float outX = mX / length();
   float outY = mY / length();
-  Vec2D vnorm = Vec2D(outX, outY);
-  return vnorm;
+  Vec2D v = Vec2D(outX, outY);
+  return v;
 }
 
 Vec2D Vec2D::multiply(float scalar) {
-  Vec2D vnorm = Vec2D(mX * scalar, mY * scalar);
-  return vnorm;
+  Vec2D v = Vec2D(mX * scalar, mY * scalar);
+  return v;
 }
+
+Vec2D Vec2D::createVector(Point2D p1, Point2D p2) {
+  float outX = p2.mX - p1.mX;
+  float outY = p2.mY - p1.mY;
+  Vec2D v    = Vec2D(outX, outY);
+  return v;
+}
+
