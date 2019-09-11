@@ -69,3 +69,9 @@ Vec2D Vec2D::createVector(Point2D p1, Point2D p2) {
   return v;
 }
 
+Point2D Vec2D::movePoint(Point2D source) {
+  float outX = source.mX + mX;
+  float outY = source.mY + mY;
+  Point2D p  = Point2D(outX, outY);
+  return p;
+}
